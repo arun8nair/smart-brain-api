@@ -11,6 +11,7 @@ services:
             - "3000:3000"
         environment: 
             POSTGRES_URI: postgres://dbuser:dbuserpass@postgres:5432/test-docker
+            REDIS_URI: redis://redis:6379
             # POSTGRES_USER: dbuser
             # POSTGRES_PASSWORD: dbuserpass
             # POSTGRES_DB: test-docker
@@ -30,3 +31,9 @@ services:
             POSTGRES_PASSWORD: dbuserpass
             POSTGRES_DB: test-docker
             POSTGRES_HOST: postgres
+
+    #redis
+    redis: 
+        image: redis
+        ports: 
+            - "6379:6379"
